@@ -339,6 +339,39 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/07/26/Inside-the-C-Object-model-二/" >
+            
+                <span>Inside the C++ Object model(二)</span>
+        </a>
+        <div class="abstract-content">
+            Adding InheritanceC++最初采用的继承模型并不运用任何间接性：基类对象的非静态成员直接被放置在派生类对象中。优点是紧凑且访问效率高，缺点是只要基类有任何改变，派生类都必须重新编译。
+自C++2.0起，有了虚基类的概念，需要一些间接表示的方法。在虚继承的情况下，虚基类无论在继承链中被派生了多少次，永远只有一个实体(subobject)。
+两种间接的继承对象模型:In simple object model基类关联派生类的一个slot,每个slot指向一个subobject的地址。缺点:空间和效率的负担。优点:派生类对象的大小不会因为基类的改变而受影响。
+
+In Table...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "C++">C++</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/07/22/Inside-the-C-object-model-一/" >
             
                 <span>Inside the C++ object model (一)</span>
@@ -507,9 +540,16 @@ A Simple Object Model为了简化编译器而设计，却浪费了空间和效�
     
     
     
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -522,6 +562,11 @@ A Simple Object Model为了简化编译器而设计，却浪费了空间和效�
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2018/07/26/Inside-the-C-Object-model-二/" >Inside the C++ Object model(二)</a>
+        </li>
     
     
         <li class="archive-post-item">
