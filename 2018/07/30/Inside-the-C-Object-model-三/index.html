@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Inside the C++ object model (一) · Backyard Cattery</title>
+    <title>Inside-the-C-Object-model-(三) · Backyard Cattery</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -210,7 +210,7 @@
                 <a href="/" >Backyard Cattery</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Inside the C++ object model (一)</a>
+                <a href="#" class="post-name">Inside-the-C-Object-model-(三)</a>
             </div>
     </div>
     
@@ -242,7 +242,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Inside the C++ object model (一)
+            Inside-the-C-Object-model-(三)
             <!-- 404 -->
             
         </h1>
@@ -261,18 +261,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "C++">C++</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "C++ Polymorphism paradigms">C++ Polymorphism paradigms</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">338</span> / Reading time: <span class="post-count">1 min</span></span>
+                        <span>Word count: <span class="post-count">306</span> / Reading time: <span class="post-count">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/07/22</span>
+                    <span class="post-intro-time">2018/07/30</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -396,12 +396,14 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="C-对象模型"><a href="#C-对象模型" class="headerlink" title="C++ 对象模型"></a>C++ 对象模型</h1><p>在c++中，<br>有两种class data members:<br>1.static<br>2.nostatic</p>
-<p>有三种class member functions:<br>1.static<br>2.nostatic<br>3.virtual</p>
-<p><strong>How is the class to be representd within the machine that is how do we model the various types of data and fuction members</strong></p>
-<h2 id="A-Simple-Object-Model"><a href="#A-Simple-Object-Model" class="headerlink" title="A Simple Object Model"></a>A Simple Object Model</h2><p>为了简化编译器而设计，却浪费了空间和效率。<br>在这种对象模型中,对象的内部结构是一个顺序槽，每个槽指向一个成员。<br>每个成员按照其声明顺序分配slot。<br><img src="/resource/SOM.png" alt="A Simple Object Model"></p>
-<h2 id="A-Table-driven-Object-Model"><a href="#A-Table-driven-Object-Model" class="headerlink" title="A Table-driven Object Model"></a>A Table-driven Object Model</h2><p>为了统一不同class的object内部结构，所有的对象内部只有两个指针，分别指向Data Member Table和Function Member Table两张表。<br>其中，Data Table 直接存储数据，Function Table 是一个顺序槽，每一个槽对应一个成员函数。<br><img src="/resource/TOM.png" alt="A Table-driven Object Model"></p>
-<h2 id="The-C-Object-Model"><a href="#The-C-Object-Model" class="headerlink" title="The C++ Object Model"></a>The C++ Object Model</h2><p>派生自简单对象模型，<br>nostatic data members 直接分配给每个object.<br>static data members 存在单个object之外.<br>static and nostatic function members 也存在object之外.<br>virtual functions members:<br>1一张虚函数表<br>2.一个指向虚函数表的指针<br>模型优点:节省空间，运行时效率更高<br>模型缺点: 当类的nostatic data members被修改需要重新编译程序<br>在双表单模型提供了较大的弹性，因为它多提供了一层间接性，但因此付出空间和执行效率的代价。<br><img src="/resource/COM.png" alt="The C++ Object Model"></p>
+        <h1 id="The-paradigms-of-C"><a href="#The-paradigms-of-C" class="headerlink" title="The paradigms of C++"></a>The paradigms of C++</h1><h2 id="Procedural-programming"><a href="#Procedural-programming" class="headerlink" title="Procedural programming"></a>Procedural programming</h2><p>Procedural programming is derived from structured programming,based upon the <strong>concept</strong> of the <em>procedure call</em>.<br>Procedures are like min programs that can be called from anywhere else in the overall program.<br>programs can be written with only four things:<br>1.Sqeuence<br>2.Selection(if statements)<br>3.Iteration(loops)<br>4.Recursion<br>指令式(imperative)编程和过程式编程的区别：<br>过程式编程非常依赖块和作用域，而指令式编程作为一个整体也许没有这些特征。</p>
+<h2 id="Object-oriented-programming"><a href="#Object-oriented-programming" class="headerlink" title="Object-oriented programming"></a>Object-oriented programming</h2><p>OOP is derived from imperative programming, based upon the <strong>concept</strong> of <em>objects</em>.<br><em>PP</em> uses procedures to operate on data structures,<em>OOP</em> bundles the two together,<strong>object</strong> operates on its <strong>own</strong> data structure.</p>
+<h2 id="Generic-programming"><a href="#Generic-programming" class="headerlink" title="Generic programming"></a>Generic programming</h2><h1 id="The-Polymorphism-in-C"><a href="#The-Polymorphism-in-C" class="headerlink" title="The Polymorphism in C++"></a>The Polymorphism in C++</h1><p>Polymorphism letting you write “algorithmic” code once and than apply it to many  types of data.</p>
+<p>The C++ Standard using a narrower definition of “<strong>polymorphism</strong>“<br>–<em>providing a single interface to entities of different types.</em><br>Virtual function provide dynamic polymorphism.<br>Overloaded functions and templates provide static polymorphism.</p>
+<h2 id="Compile-time-binding-Static-binding"><a href="#Compile-time-binding-Static-binding" class="headerlink" title="Compile-time binding(Static binding)"></a>Compile-time binding(Static binding)</h2><p>Complile-time binding is to associate a function’s name with the entry point of the function at compile time.<br>Example:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">savHi</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   sayHi();    <span class="comment">//the compiler binds any invocation of sayHi()</span></span><br><span class="line">              <span class="comment">//to sayHi()'s entry point.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sayHi</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello,Backyard"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In C,only compile-time binding is provided.<br>In C++,all non-virtual functions are bound at compile-time.</p>
+<h3 id="Static-polymorphism"><a href="#Static-polymorphism" class="headerlink" title="Static polymorphism"></a>Static polymorphism</h3><h4 id="Overloading"><a href="#Overloading" class="headerlink" title="Overloading"></a>Overloading</h4><h4 id="Templates"><a href="#Templates" class="headerlink" title="Templates"></a>Templates</h4><h4 id="Redefining"><a href="#Redefining" class="headerlink" title="Redefining"></a>Redefining</h4><h2 id="Run-time-binding-Dynamic-binding"><a href="#Run-time-binding-Dynamic-binding" class="headerlink" title="Run-time binding(Dynamic binding)"></a>Run-time binding(Dynamic binding)</h2><p>Run-time binding is to associate a function’s name with the entry point at run-time.<br>C++ supports run-time binding through virtual funcitons.</p>
 
     </article>
     <!-- license  -->
@@ -410,17 +412,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/07/26/Inside-the-C-Object-model-二/" title= Inside the C++ Object model(二) >
-                    <div class="nextTitle">Inside the C++ Object model(二)</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/07/22/ZERO/" title= ZERO >
-                    <div class="prevTitle">ZERO</div>
+                <a href= "/2018/07/26/Inside-the-C-Object-model-二/" title= Inside the C++ Object model(二) >
+                    <div class="prevTitle">Inside the C++ Object model(二)</div>
                 </a>
             
         </li>
@@ -551,7 +548,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#C-对象模型"><span class="toc-number">1.</span> <span class="toc-text">C++ 对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Simple-Object-Model"><span class="toc-number">1.1.</span> <span class="toc-text">A Simple Object Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Table-driven-Object-Model"><span class="toc-number">1.2.</span> <span class="toc-text">A Table-driven Object Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-C-Object-Model"><span class="toc-number">1.3.</span> <span class="toc-text">The C++ Object Model</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#The-paradigms-of-C"><span class="toc-number">1.</span> <span class="toc-text">The paradigms of C++</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Procedural-programming"><span class="toc-number">1.1.</span> <span class="toc-text">Procedural programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-oriented-programming"><span class="toc-number">1.2.</span> <span class="toc-text">Object-oriented programming</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generic-programming"><span class="toc-number">1.3.</span> <span class="toc-text">Generic programming</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#The-Polymorphism-in-C"><span class="toc-number">2.</span> <span class="toc-text">The Polymorphism in C++</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Compile-time-binding-Static-binding"><span class="toc-number">2.1.</span> <span class="toc-text">Compile-time binding(Static binding)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Static-polymorphism"><span class="toc-number">2.1.1.</span> <span class="toc-text">Static polymorphism</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Overloading"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">Overloading</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Templates"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">Templates</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Redefining"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">Redefining</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Run-time-binding-Dynamic-binding"><span class="toc-number">2.2.</span> <span class="toc-text">Run-time binding(Dynamic binding)</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
