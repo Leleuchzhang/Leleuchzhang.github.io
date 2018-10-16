@@ -261,7 +261,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">1,758</span> / Reading time: <span class="post-count">11 min</span></span>
+                        <span>Word count: <span class="post-count">1,766</span> / Reading time: <span class="post-count">11 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -390,9 +390,11 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Basic-of-Asynchronous-Device-I-O"><a href="#Basic-of-Asynchronous-Device-I-O" class="headerlink" title="Basic of Asynchronous Device I/O"></a>Basic of Asynchronous Device I/O</h1><p>The two types I/O are illustrated in the fllowing figure.<br><img src="/resource/types.png" alt="synchronization types"><br>I/O bound:asynchronous I/O is generally a good way to optimize processing efficiency.<br>CPU bound:the overhead of processing kernel I/O requests and kernel signals may make asynchronous I/O less beneficial.<br>Device I/O: is one of the slowest and most unpredictable(不可预估) compared to other operations carried out by a computer.</p>
-<p>Device driver: which assumes(承担) the responsibility of actually performing the I/O.</p>
-<p>Asynchronous I/O: When a thread issues an I/O request to a device, this I/O request is passed to a device driver.While the device driver waits for device to respond,the thread is not suspended instead continue executing other tasks.Afer proccessing the I/O request driver must notify the thread.</p>
+        <h1 id="Basic-of-Asynchronous-Device-I-O"><a href="#Basic-of-Asynchronous-Device-I-O" class="headerlink" title="Basic of Asynchronous Device I/O"></a>Basic of Asynchronous Device I/O</h1><p>The detail of simplified I/O buffer handling<br><img src="/resource/IO op.png" alt="IO op"><br>The two types I/O are illustrated in the fllowing figure.<br><img src="/resource/types.png" alt="synchronization types"><br><strong>I/O bound</strong>: asynchronous I/O is generally a good way to optimize processing efficiency.</p>
+<p><strong>CPU bound</strong>: the overhead of processing kernel I/O requests and kernel signals may make asynchronous I/O less beneficial.</p>
+<p><strong>Device I/O</strong>: is one of the slowest and most unpredictable(不可预估) compared to other operations carried out by a computer.</p>
+<p><strong>Device driver</strong>: which assumes(承担) the responsibility of actually performing the I/O.</p>
+<p><strong>Asynchronous I/O</strong>: When a thread issues an I/O request to a device, this I/O request is passed to a device driver.While the device driver waits for device to respond,the thread is not suspended instead continue executing other tasks.Afer proccessing the I/O request driver must notify the thread.</p>
 <h1 id="Queue-asynchronous-I-O-request"><a href="#Queue-asynchronous-I-O-request" class="headerlink" title="Queue asynchronous I/O request"></a>Queue asynchronous I/O request</h1><p>Queuing asynchronous I/O request is the enssence of desining a high-performance application.</p>
 <h2 id="To-access-a-device-asynchronously"><a href="#To-access-a-device-asynchronously" class="headerlink" title="To access a device asynchronously"></a>To access a device asynchronously</h2><ol>
 <li><p>must open device specifying the <strong>FILE_FLAG_OVERLAPPED</strong>flag in the dwFlagAndAttributes parameter.</p>
@@ -684,8 +686,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 7
@@ -746,9 +746,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="C++"><span class="iconfont-archer">&#xe606;</span>C++</span>
     
-        <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
-    
         <span class="sidebar-tag-name" data-tags="Winsock"><span class="iconfont-archer">&#xe606;</span>Winsock</span>
+    
+        <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
