@@ -339,48 +339,14 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/26/Inside-the-C-Object-model-二/" >
+        <a class="abstract-title" href = "/2018/07/22/ZERO/" >
             
-                <span>Inside the C++ Object model(二)</span>
+                <span>ZERO</span>
         </a>
         <div class="abstract-content">
-            Adding InheritanceC++最初采用的继承模型并不运用任何间接性：基类对象的非静态成员直接被放置在派生类对象中。优点是紧凑且访问效率高，缺点是只要基类有任何改变，派生类都必须重新编译。
-自C++2.0起，有了虚基类的概念，需要一些间接表示的方法。在虚继承的情况下，虚基类无论在继承链中被派生了多少次，永远只有一个实体(subobject)。
-两种间接的继承对象模型:In simple object model基类关联派生类的一个slot,每个slot指向一个subobject的地址。缺点:空间和效率的负担。优点:派生类对象的大小不会因为基类的改变而受影响。
+            C++ object model1234for(int i =0; i&lt;10; i++)&#123;   cout&lt;&lt;"hello world"&lt;&lt;endl;&#125;
 
-In Table...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "C++">C++</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/22/Inside-the-C-object-model-一/" >
-            
-                <span>Inside the C++ object model (一)</span>
-        </a>
-        <div class="abstract-content">
-            C++ 对象模型在c++中，有两种class data members:1.static2.nostatic
-有三种class member functions:1.static2.nostatic3.virtual
-How is the class to be representd within the machine that is how do we model the various types of data and fuction members
-A Simple Object Model为了简化编译器而设计，却浪费了空间和效率。在这种对象模型中,对象的内部结构是一个顺序槽，...
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -391,7 +357,7 @@ A Simple Object Model为了简化编译器而设计，却浪费了空间和效�
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "C++">C++</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "c++">c++</a>
     
 </div>
             
@@ -547,9 +513,26 @@ A Simple Object Model为了简化编译器而设计，却浪费了空间和效�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 6
+        Total : 7
         </div>
         <!-- search  -->
         
@@ -562,6 +545,11 @@ A Simple Object Model为了简化编译器而设计，却浪费了空间和效�
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2018/10/08/派生类的构造函数的初始化列表问题/" >派生类的构造函数的初始化列表问题</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -598,13 +586,13 @@ A Simple Object Model为了简化编译器而设计，却浪费了空间和效�
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="C++"><span class="iconfont-archer">&#xe606;</span>C++</span>
-    
         <span class="sidebar-tag-name" data-tags="C++ Polymorphism paradigms"><span class="iconfont-archer">&#xe606;</span>C++ Polymorphism paradigms</span>
     
-        <span class="sidebar-tag-name" data-tags="Winsock"><span class="iconfont-archer">&#xe606;</span>Winsock</span>
+        <span class="sidebar-tag-name" data-tags="C++"><span class="iconfont-archer">&#xe606;</span>C++</span>
     
         <span class="sidebar-tag-name" data-tags="c++"><span class="iconfont-archer">&#xe606;</span>c++</span>
+    
+        <span class="sidebar-tag-name" data-tags="Winsock"><span class="iconfont-archer">&#xe606;</span>Winsock</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -613,6 +601,74 @@ A Simple Object Model为了简化编译器而设计，却浪费了空间和效�
     1、请确保node版本大于6.2<br/>
     2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
     <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="对象模型"><span class="iconfont-archer">&#xe60a;</span>对象模型</span>
+    
+        <span class="sidebar-category-name" data-categories="ZERO"><span class="iconfont-archer">&#xe60a;</span>ZERO</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "John Doe"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+     
+    </body>
+</html>
+
+
+e: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
     3、在根目录_config.yml里添加配置：
     <pre style="color: #787878; font-size: 0.6rem;">
 jsonContent:
